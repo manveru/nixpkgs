@@ -166,5 +166,19 @@ in
       export XAPIAN_CONFIG=${xapian}/bin/xapian-config
     '';
   };
+
+  bundler = attrs:
+    let
+      templates = "${attrs.ruby.gemPath}/gems/${attrs.gemName}-${attrs.version}/lib/bundler/templates/";
+    in
+      {
+        preFixup = ''
+          chmod -x $out/${templates}/Executable
+        '';
+
+        postFixup = ''
+          chmod +x $out/${templates}/Executable
+        '';
+      };
 }
 
