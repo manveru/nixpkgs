@@ -8,6 +8,7 @@ let abis = lib.mapAttrs (_: abi: builtins.removeAttrs abi [ "assertions" ]) abis
 
 rec {
   patterns = rec {
+    isi586         = { cpu = cpuTypes.i586; };
     isi686         = { cpu = cpuTypes.i686; };
     isx86_64       = { cpu = cpuTypes.x86_64; };
     isPowerPC      = { cpu = cpuTypes.powerpc; };
