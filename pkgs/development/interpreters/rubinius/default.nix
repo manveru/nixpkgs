@@ -33,6 +33,8 @@ in clangStdenv.mkDerivation rec {
 
   buildPhase = ''
     mkdir -p $out
+    mkdir home
+    export HOME=$PWD/home
     ./build.sh --prefix=$out
   '';
 
