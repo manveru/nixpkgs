@@ -8640,6 +8640,8 @@ in
 
   ruby = ruby_2_5;
 
+  rubinius = callPackage ../development/interpreters/rubinius { };
+
   mruby = callPackage ../development/compilers/mruby { };
 
   scsh = callPackage ../development/interpreters/scsh { };
