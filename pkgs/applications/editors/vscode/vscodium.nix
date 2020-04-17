@@ -11,8 +11,8 @@ let
   archive_fmt = if system == "x86_64-darwin" then "zip" else "tar.gz";
 
   sha256 = {
-    x86_64-linux = "1w7vry3lvjf847qbjqc4xv6hcyspki366k8wmyfvzyw6c9m7yzwm";
-    x86_64-darwin = "13wg015qsh4qayamd9jppk2abqpnakx2mhf41z3nyb3zfng62pza";
+    x86_64-linux = "16qwhnxpwarnwvlxwvy13g687g1cnfzysq16qkykkhqig0cnalmb";
+    x86_64-darwin = "1p9qkbj59bfc0kn9fzg99gqxbzwxq297qxivxcjflsapd712s4vm";
   }.${system};
 
   sourceRoot = {
@@ -27,7 +27,7 @@ in
 
     # Please backport all compatible updates to the stable release.
     # This is important for the extension ecosystem.
-    version = "1.43.2";
+    version = "1.44.1";
     pname = "vscodium";
 
     executableName = "codium";
@@ -51,8 +51,8 @@ in
         and code refactoring. It is also customizable, so users can change the
         editor's theme, keyboard shortcuts, and preferences
       '';
-      homepage = https://github.com/VSCodium/vscodium;
-      downloadPage = https://github.com/VSCodium/vscodium/releases;
+      homepage = "https://github.com/VSCodium/vscodium";
+      downloadPage = "https://github.com/VSCodium/vscodium/releases";
       license = licenses.mit;
       maintainers = with maintainers; [ synthetica ];
       platforms = [ "x86_64-linux" "x86_64-darwin" ];

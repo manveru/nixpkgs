@@ -795,6 +795,8 @@ in {
 
   handout = callPackage ../development/python-modules/handout { };
 
+  HAP-python = callPackage ../development/python-modules/HAP-python { };
+
   helper = callPackage ../development/python-modules/helper { };
 
   hdmedians = callPackage ../development/python-modules/hdmedians { };
@@ -1127,6 +1129,10 @@ in {
 
   py-lru-cache = callPackage ../development/python-modules/py-lru-cache { };
 
+  py-multibase = callPackage ../development/python-modules/py-multibase { };
+
+  py-multihash = callPackage ../development/python-modules/py-multihash { };
+
   py-radix = callPackage ../development/python-modules/py-radix { };
 
   pydbus = callPackage ../development/python-modules/pydbus { };
@@ -1213,6 +1219,8 @@ in {
   pymeeus = callPackage ../development/python-modules/pymeeus { };
 
   pymsgbox = callPackage ../development/python-modules/pymsgbox { };
+
+  pynanoleaf = callPackage ../development/python-modules/pynanoleaf { };
 
   pynisher = callPackage ../development/python-modules/pynisher { };
 
@@ -1616,6 +1624,8 @@ in {
   aioh2 = callPackage ../development/python-modules/aioh2 { };
 
   aioftp = callPackage ../development/python-modules/aioftp { };
+
+  aioharmony = callPackage ../development/python-modules/aioharmony { };
 
   aiohttp = callPackage ../development/python-modules/aiohttp { };
 
@@ -2661,6 +2671,8 @@ in {
   dpkt = callPackage ../development/python-modules/dpkt {};
 
   urllib3 = callPackage ../development/python-modules/urllib3 {};
+
+  varint =  callPackage ../development/python-modules/varint {};
 
   drf-yasg = callPackage ../development/python-modules/drf-yasg { };
 
@@ -3999,6 +4011,8 @@ in {
   hydra = callPackage ../development/python-modules/hydra { };
 
   hypothesis = callPackage ../development/python-modules/hypothesis { };
+
+  hydra-check = callPackage ../development/python-modules/hydra-check { };
 
   colored = callPackage ../development/python-modules/colored { };
 
@@ -6487,6 +6501,8 @@ in {
   graphite_beacon = callPackage ../development/python-modules/graphite_beacon { };
 
   graph_nets = callPackage ../development/python-modules/graph_nets { };
+
+  graspy = callPackage ../development/python-modules/graspy { };
 
   influxgraph = callPackage ../development/python-modules/influxgraph { };
 

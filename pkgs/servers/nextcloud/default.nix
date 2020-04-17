@@ -1,4 +1,4 @@
-{ stdenv, fetchurl }:
+{ stdenv, fetchurl, nixosTests }:
 
 let
   generic = { version, sha256, insecure ? false }: stdenv.mkDerivation rec {
@@ -10,6 +10,8 @@ let
       inherit sha256;
     };
 
+    passthru.tests = nixosTests.nextcloud;
+
     installPhase = ''
       mkdir -p $out/
       cp -R . $out/
@@ -17,7 +19,7 @@ let
 
     meta = with stdenv.lib; {
       description = "Sharing solution for files, calendars, contacts and more";
-      homepage = https://nextcloud.com;
+      homepage = "https://nextcloud.com";
       maintainers = with maintainers; [ schneefux bachp globin fpletz ma27 ];
       license = licenses.agpl3Plus;
       platforms = with platforms; unix;

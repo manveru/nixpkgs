@@ -50,7 +50,7 @@ in
       meta = with pkgs.lib; {
         description = "An application for building and managing Phars";
         license = licenses.mit;
-        homepage = https://box-project.github.io/box2/;
+        homepage = "https://box-project.github.io/box2/";
         maintainers = with maintainers; [ jtojnar ];
       };
     };
@@ -79,7 +79,7 @@ in
       meta = with pkgs.lib; {
         description = "Dependency Manager for PHP";
         license = licenses.mit;
-        homepage = https://getcomposer.org/;
+        homepage = "https://getcomposer.org/";
         maintainers = with maintainers; [ globin offline ];
       };
     };
@@ -106,7 +106,7 @@ in
       meta = with pkgs.lib; {
         description = "A tool to automatically fix PHP coding standards issues";
         license = licenses.mit;
-        homepage = http://cs.sensiolabs.org/;
+        homepage = "http://cs.sensiolabs.org/";
         maintainers = with maintainers; [ jtojnar ];
       };
     };
@@ -143,18 +143,18 @@ in
       meta = with pkgs.lib; {
         description = "This tool check syntax of PHP files faster than serial check with fancier output";
         license = licenses.bsd2;
-        homepage = https://github.com/JakubOnderka/PHP-Parallel-Lint;
+        homepage = "https://github.com/JakubOnderka/PHP-Parallel-Lint";
         maintainers = with maintainers; [ jtojnar ];
       };
     };
 
     phpcbf = mkDerivation rec {
-      version = "3.5.3";
+      version = "3.5.4";
       pname = "phpcbf";
 
       src = pkgs.fetchurl {
         url = "https://github.com/squizlabs/PHP_CodeSniffer/releases/download/${version}/phpcbf.phar";
-        sha256 = "1mrsf9p6p64pyqyylnlxb2b7cirdfccch83g7yhfnka3znffq86v";
+        sha256 = "18x7fk59l821pivw1i2r868y78qgs0qk47b9il1smwi6plwyyflr";
       };
 
       phases = [ "installPhase" ];
@@ -163,25 +163,25 @@ in
       installPhase = ''
         mkdir -p $out/bin
         install -D $src $out/libexec/phpcbf/phpcbf.phar
-        makeWrapper ${php}/bin/php $out/bin/phpcbf \
+        makeWrapper ${phpWithExtensions}/bin/php $out/bin/phpcbf \
           --add-flags "$out/libexec/phpcbf/phpcbf.phar"
       '';
 
       meta = with pkgs.lib; {
         description = "PHP coding standard beautifier and fixer";
         license = licenses.bsd3;
-        homepage = https://squizlabs.github.io/PHP_CodeSniffer/;
+        homepage = "https://squizlabs.github.io/PHP_CodeSniffer/";
         maintainers = with maintainers; [ cmcdragonkai etu ];
       };
     };
 
     phpcs = mkDerivation rec {
-      version = "3.5.3";
+      version = "3.5.4";
       pname = "phpcs";
 
       src = pkgs.fetchurl {
         url = "https://github.com/squizlabs/PHP_CodeSniffer/releases/download/${version}/phpcs.phar";
-        sha256 = "0y4nhsifj4pdmf5g1nnm4951yjgiqswyz7wmjxx6kqiqc7chlkml";
+        sha256 = "1lrybdxxig3yqd3i3nwji5jjn377p50sbpm4s4852dlsxz9qnlgs";
       };
 
       phases = [ "installPhase" ];
@@ -190,25 +190,25 @@ in
       installPhase = ''
         mkdir -p $out/bin
         install -D $src $out/libexec/phpcs/phpcs.phar
-        makeWrapper ${php}/bin/php $out/bin/phpcs \
+        makeWrapper ${phpWithExtensions}/bin/php $out/bin/phpcs \
           --add-flags "$out/libexec/phpcs/phpcs.phar"
       '';
 
       meta = with pkgs.lib; {
         description = "PHP coding standard tool";
         license = licenses.bsd3;
-        homepage = https://squizlabs.github.io/PHP_CodeSniffer/;
+        homepage = "https://squizlabs.github.io/PHP_CodeSniffer/";
         maintainers = with maintainers; [ javaguirre etu ];
       };
     };
 
     phpstan = mkDerivation rec {
-      version = "0.12.14";
+      version = "0.12.18";
       pname = "phpstan";
 
       src = pkgs.fetchurl {
         url = "https://github.com/phpstan/phpstan/releases/download/${version}/phpstan.phar";
-        sha256 = "JAq1/+bVhTgKRR7oFusqZ/yBOYewaOM38ZoiCjirsTg=";
+        sha256 = "0xf0q2z6rhpnbys53si05mddfyjn3wx5wc8zx5y6dv5fzw6z7rch";
       };
 
       phases = [ "installPhase" ];
@@ -217,7 +217,7 @@ in
       installPhase = ''
         mkdir -p $out/bin
         install -D $src $out/libexec/phpstan/phpstan.phar
-        makeWrapper ${php}/bin/php $out/bin/phpstan \
+        makeWrapper ${phpWithExtensions}/bin/php $out/bin/phpstan \
           --add-flags "$out/libexec/phpstan/phpstan.phar"
       '';
 
@@ -258,7 +258,7 @@ in
       meta = with pkgs.lib; {
         description = "A static analysis tool for finding errors in PHP applications";
         license = licenses.mit;
-        homepage = https://github.com/vimeo/psalm;
+        homepage = "https://github.com/vimeo/psalm";
       };
     };
 
@@ -284,7 +284,7 @@ in
       meta = with pkgs.lib; {
         description = "PsySH is a runtime developer console, interactive debugger and REPL for PHP.";
         license = licenses.mit;
-        homepage = https://psysh.org/;
+        homepage = "https://psysh.org/";
         maintainers = with maintainers; [ caugner ];
       };
     };
@@ -939,7 +939,7 @@ in
       # pdo_firebird (7.4, 7.3, 7.2)
       { name = "pdo_mysql";
         internalDeps = with php.extensions; [ pdo mysqlnd ];
-        configureFlags = [ "--with-pdo-mysql=mysqlnd" ];
+        configureFlags = [ "--with-pdo-mysql=mysqlnd" "PHP_MYSQL_SOCK=/run/mysqld/mysqld.sock" ];
         doCheck = false; }
       # pdo_oci (7.4, 7.3, 7.2)
       { name = "pdo_odbc";
