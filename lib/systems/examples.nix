@@ -226,6 +226,14 @@ rec {
     platform = {};
   };
 
+  # 64 bit mingw-pc
+  mingwPC64 = {
+    # That's the triplet used for rust cross-compilation.
+    config = "x86_64-pc-mingw32";
+    libc = "msvcrt"; # This distinguishes the mingw (non posix) toolchain
+    platform = {};
+  };
+
   # BSDs
 
   amd64-netbsd = {
