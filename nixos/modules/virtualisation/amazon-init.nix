@@ -16,7 +16,7 @@ let
       # If the user-data looks like it could be a nix expression,
       # copy it over. Also, look for a magic three-hash comment and set
       # that as the channel.
-      if sed '/^\(#\|SSH_HOST_.*\)/d' < "$userData" | grep -q '\S'; then
+      if nix-instantiate --parse "$userData" > /dev/null; then
         channels="$(grep '^###' "$userData" | sed 's|###\s*||')"
         printf "%s" "$channels" | while read channel; do
           echo "writing channel: $channel"
