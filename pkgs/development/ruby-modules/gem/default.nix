@@ -64,6 +64,10 @@ let
       fetchgit {
         inherit (attrs.source) url rev sha256 fetchSubmodules;
       }
+    else if type == "builtins-git" then
+      builtins.fetchGit {
+        inherit (attrs.source) url rev ref;
+      }
     else if type == "url" then
       fetchurl attrs.source
     else
