@@ -88,7 +88,7 @@ stdenv.mkDerivation ((builtins.removeAttrs attrs ["source"]) // {
 
   buildInputs = [
     ruby makeWrapper
-  ] ++ lib.optionals (type == "git") [ git ]
+  ] ++ lib.optionals (type == "git" || type == "builtins-git") [ git ]
     ++ lib.optionals (type != "gem") [ bundler ]
     ++ lib.optional stdenv.isDarwin darwin.libobjc
     ++ buildInputs;
@@ -146,7 +146,7 @@ stdenv.mkDerivation ((builtins.removeAttrs attrs ["source"]) // {
       gempkg=$(echo "$output" | grep -oP 'File: \K(.*)')
 
       echo "gem package built: $gempkg"
-    elif [[ "$type" == "git" ]]; then
+    elif [[ "$type" == "git" || "$type" == "builtins-git" ]]; then
       git init
       # remove variations to improve the likelihood of a bit-reproducible output
       rm -rf .git/logs/ .git/hooks/ .git/index .git/FETCH_HEAD .git/ORIG_HEAD .git/refs/remotes/origin/HEAD .git/config
@@ -176,7 +176,7 @@ stdenv.mkDerivation ((builtins.removeAttrs attrs ["source"]) // {
       '${version}' \
       '${lib.escapeShellArgs buildFlags}'
     ''}
-    ${lib.optionalString (type == "git") ''
+    ${lib.optionalString (type == "git" || type == "builtins-git") ''
     ruby ${./nix-bundle-install.rb} \
       "git" \
       '${gemName}' \
