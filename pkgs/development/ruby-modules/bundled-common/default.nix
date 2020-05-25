@@ -127,7 +127,8 @@ let
               --unset BUNDLE_PATH \
               --set BUNDLE_FROZEN 1 \
               --set GEM_HOME ${basicEnv}/${ruby.gemPath} \
-              --set GEM_PATH ${basicEnv}/${ruby.gemPath}
+              --set GEM_PATH ${basicEnv}/${ruby.gemPath} \
+              --set RUBYOPT "-r${bundler}/${ruby.gemPath}/gems/bundler-${bundler.version}/lib/bundler/setup"
           done
         '';
       };
