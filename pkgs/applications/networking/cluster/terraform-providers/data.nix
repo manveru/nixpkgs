@@ -76,9 +76,9 @@
     {
       owner   = "terraform-providers";
       repo    = "terraform-provider-aws";
-      rev     = "v2.65.0";
-      version = "2.65.0";
-      sha256  = "005vs1qd6payicxldc9lr4w6kzr58xw9b930j52g1q7hlddl5mbb";
+      rev     = "v3.8.0";
+      version = "3.8.0";
+      sha256  = "sha256-NLRh/UqB6sm1966USYGf8Uc7pC+6+tHknMgbImD+ArY=";
     };
   azuread =
     {
@@ -1092,9 +1092,9 @@
     {
       owner   = "terraform-providers";
       repo    = "terraform-provider-vault";
-      rev     = "v2.11.0";
-      version = "2.11.0";
-      sha256  = "1yzakc7jp0rs9axnfdqw409asrbjhq0qa7xn4xzpi7m94g1ii12d";
+      rev     = "v2.14.0";
+      version = "2.14.0";
+      sha256  = "sha256-CeZIBuy00HGXAFDuiYEKm11o0ylkMAl07wa+zL9EW3E=";
     };
   vcd =
     {
