@@ -17,6 +17,12 @@ let
       };
 
       postConfigure = ''
+        # shim between Terraform 0.13 and 0.14
+        if [ -L vendor ]; then
+          vendor="$(readlink -f vendor)"
+          rm vendor
+          cp -r "$vendor" vendor
+        fi
         # speakeasy hardcodes /bin/stty https://github.com/bgentry/speakeasy/issues/22
         substituteInPlace vendor/github.com/bgentry/speakeasy/speakeasy_unix.go \
           --replace "/bin/stty" "${coreutils}/bin/stty"

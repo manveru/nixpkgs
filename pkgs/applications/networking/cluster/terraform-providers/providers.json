@@ -213,12 +213,13 @@
     "version": "0.1.0"
   },
   "consul": {
-    "owner": "terraform-providers",
+    "owner": "hashicorp",
     "provider-source-address": "registry.terraform.io/hashicorp/consul",
     "repo": "terraform-provider-consul",
-    "rev": "v2.8.0",
-    "sha256": "1brd0fp9ksc3x8cygxm0k2q1sh4v5x89298pnidg6xirn41lvcr4",
-    "version": "2.8.0"
+    "rev": "v2.11.0",
+    "sha256": "007v7blzsfh0gd3i54w8jl2czbxidwk3rl2wgdncq423xh9pkx1d",
+    "vendorSha256": null,
+    "version": "2.11.0"
   },
   "ct": {
     "owner": "poseidon",
@@ -995,12 +996,13 @@
     "version": "0.1.0"
   },
   "vault": {
-    "owner": "terraform-providers",
+    "owner": "hashicorp",
     "provider-source-address": "registry.terraform.io/hashicorp/vault",
     "repo": "terraform-provider-vault",
-    "rev": "v2.11.0",
-    "sha256": "1yzakc7jp0rs9axnfdqw409asrbjhq0qa7xn4xzpi7m94g1ii12d",
-    "version": "2.11.0"
+    "rev": "v2.18.0",
+    "sha256": "0lmgh9w9n0qvg9kf4av1yql2dh10r0jjxy5x3vckcpfc45lgsy40",
+    "vendorSha256": null,
+    "version": "2.18.0"
   },
   "vcd": {
     "owner": "terraform-providers",
